@@ -142,19 +142,11 @@ RaceDay
 
 ## 7. GitHub and CI/CD
 
-GitHub is used to store and manage the RaceDay project.
-
-A minimum of 20 meaningful commits will be made for Part 1 to demonstrate the development process.
-
-GitHub Actions will be used to validate the repository structure and confirm that the required documentation and database files are present.
-
-### CI/CD Build
-
-A screenshot of the successful green GitHub Actions build will be added to this README once the workflow has been completed.
 
 **CI/CD Screenshot:**
+<img width="1912" height="717" alt="validate" src="https://github.com/user-attachments/assets/52b187b3-badf-4051-8460-d5f54aa8cf7e" />
 
-*To be added.*
+
 
 ## 8. Video Presentation
 

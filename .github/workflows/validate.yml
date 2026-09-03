@@ -10,28 +10,33 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Show repository files
-        run: |
-          echo "Files in repository:"
-          find . -maxdepth 3 -type f | sort
+        uses: actions/checkout@v5
 
       - name: Check required files
         run: |
-          echo "Checking README.md..."
-          test -f README.md || { echo "❌ README.md is missing"; exit 1; }
+          echo "Checking required files..."
 
-          echo "Checking RaceDay_ERD.png..."
-          test -f docs/RaceDay_ERD.png || { echo "❌ docs/RaceDay_ERD.png is missing"; exit 1; }
+          if [ ! -f "README.md" ]; then
+            echo "❌ README.md is missing"
+            exit 1
+          fi
 
-          echo "Checking API Endpoint Plan..."
-          test -f docs/API_Endpoint_Plan.md.docx || { echo "❌ docs/API_Endpoint_Plan.md.docx is missing"; exit 1; }
+          if [ ! -f "docs/RaceDay_ERD.png" ]; then
+            echo "❌ docs/RaceDay_ERD.png is missing"
+            exit 1
+          fi
 
-          echo "Checking SQL database..."
-          test -f docs/RaceDay_Database.sql || { echo "❌ docs/RaceDay_Database.sql is missing"; exit 1; }
+          if [ ! -f "docs/API_Endpoint_Plan.md.docx" ]; then
+            echo "❌ docs/API_Endpoint_Plan.md.docx is missing"
+            exit 1
+          fi
 
-          echo "✅ All required RaceDay Part 1 files are present."
+          if [ ! -f "docs/RaceDay_Database.sql" ]; then
+            echo "❌ docs/RaceDay_Database.sql is missing"
+            exit 1
+          fi
+
+          echo "✅ All required RaceDay Part 1 files are present!"
 
       - name: Validation successful
         run: echo "✅ RaceDay Part 1 validation completed successfully."

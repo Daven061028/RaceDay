@@ -26,9 +26,9 @@ jobs:
             exit 1
           fi
 
-          if [ ! -f "docs/API_Endpoint_Plan.md.docx" ]; then
-            echo "❌ docs/API_Endpoint_Plan.md.docx is missing"
-            exit 1
+          if [ ! -f "docs/API_Endpoint_Plan.pdf" ]; then
+          echo "❌ docs/API_Endpoint_Plan.pdf is missing"
+          exit 1
           fi
 
           if [ ! -f "docs/RaceDay_Database.sql" ]; then

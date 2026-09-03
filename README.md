@@ -150,19 +150,10 @@ RaceDay
 
 ## 8. Video Presentation
 
-An unlisted YouTube video will be created for the Part 1 presentation.
-
-The video will explain:
-
-* The RaceDay system.
-* The ERD and the database design decisions.
-* The API endpoint plan and endpoint choices.
-* The SQL database design.
-* The execution of the SQL script in SQL Server Management Studio.
 
 **YouTube Video Link:**
 
-*To be added.*
+https://youtu.be/5KF1HvkL6-k
 
 ## 9. Part 1 Documentation
 

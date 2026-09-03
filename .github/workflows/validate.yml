@@ -12,10 +12,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Show repository files
+        run: |
+          echo "Files in repository:"
+          find . -maxdepth 3 -type f | sort
+
       - name: Check required files
         run: |
-          test -f README.md
-          test -f docs/RaceDay_ERD.png
-          test -f docs/API_Endpoint_Plan.md.docx
-          test -f docs/RaceDay_Database.sql
-          echo "All required RaceDay Part 1 files are present."
+          echo "Checking README.md..."
+          test -f README.md || { echo "❌ README.md is missing"; exit 1; }
+
+          echo "Checking RaceDay_ERD.png..."
+          test -f docs/RaceDay_ERD.png || { echo "❌ docs/RaceDay_ERD.png is missing"; exit 1; }
+
+          echo "Checking API Endpoint Plan..."
+          test -f docs/API_Endpoint_Plan.md.docx || { echo "❌ docs/API_Endpoint_Plan.md.docx is missing"; exit 1; }
+
+          echo "Checking SQL database..."
+          test -f docs/RaceDay_Database.sql || { echo "❌ docs/RaceDay_Database.sql is missing"; exit 1; }
+
+          echo "✅ All required RaceDay Part 1 files are present."
+
+      - name: Validation successful
+        run: echo "✅ RaceDay Part 1 validation completed successfully."
